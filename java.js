@@ -31,6 +31,9 @@ function gameStart() {
     
     document.querySelector('.player-0-panel').classList.remove('winner');
     document.querySelector('.player-1-panel').classList.remove('winner');
+    
+    document.querySelector('.player-0-panel').classList.remove('active');
+    document.querySelector('.player-0-panel').classList.toggle('active');
 }
 
 // Next Player
@@ -86,7 +89,7 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
         // 2. Update the UI
         document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];  
         // 3. Check if Player won
-        if (scores[activePlayer] >= 20) {
+        if (scores[activePlayer] >= 50) {
             document.querySelector('#name-' + activePlayer).textContent = 'Winner!';
             document.querySelector('.dice').style.display = 'none';
             document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
